@@ -60,8 +60,8 @@ tfoot td { font-weight: 600; border-bottom: 0; }
 /* sign-in form */
 .field { display: flex; flex-direction: column; gap: 4px; }
 .pw { position: relative; }
-.pw input { width: 100%; padding-right: 44px; }
-.eye { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--muted); cursor: pointer; padding: 6px; display: flex; }
+.pw input { display: block; width: 100%; padding-right: 48px; }
+.eye { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: none; border: 0; color: var(--muted); cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
 .eye:hover { color: var(--text); }
 input.invalid { border-color: var(--bad); }
 .hint { font-size: .82rem; }
@@ -105,6 +105,8 @@ input.invalid { border-color: var(--bad); }
 }
 
 /* comfortable tap targets and no iOS zoom on inputs */
-.btn, .link, .eye { min-height: 44px; }
+.btn, .link { min-height: 44px; }
 .link { min-height: 36px; }
 input { font-size: 16px; }
+
+input:focus { outline: 2px solid var(--primary); outline-offset: 0; border-color: var(--primary); }
