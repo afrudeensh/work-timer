@@ -1,0 +1,21 @@
+@if (!sb.ready()) {
+  <p class="center muted">Loading…</p>
+} @else if (sb.recovery()) {
+  <app-reset />
+} @else if (!sb.session()) {
+  <app-login />
+} @else {
+  <header class="topbar">
+    <strong>⏱ Work Timer</strong>
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Today</a>
+      <a routerLink="/report" routerLinkActive="active">Weekly</a>
+      <a routerLink="/monthly" routerLinkActive="active">Monthly</a>
+      <a routerLink="/yearly" routerLinkActive="active">Yearly</a>
+    </nav>
+    <button class="link" (click)="signOut()">Sign out</button>
+  </header>
+  <main>
+    <router-outlet />
+  </main>
+}
