@@ -73,3 +73,38 @@ input.invalid { border-color: var(--bad); }
 .divider { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .8rem; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 .link.right { align-self: flex-end; font-size: .85rem; }
+
+/* ---------- mobile ---------- */
+.login { width: calc(100% - 32px); }
+.topbar nav { min-width: 0; }
+
+@media (max-width: 640px) {
+  main { padding: 12px; gap: 12px; }
+  .card { padding: 14px; border-radius: 14px; }
+
+  /* menu on its own scrollable row under the title and Sign out */
+  .topbar { padding: 10px 12px; gap: 8px 12px; }
+  .topbar > strong { flex: 1; }
+  .topbar nav { order: 3; flex: 0 0 100%; overflow-x: auto; gap: 6px; padding-bottom: 2px; scrollbar-width: none; }
+  .topbar nav::-webkit-scrollbar { display: none; }
+  .topbar a { white-space: nowrap; padding: 6px 12px; }
+
+  .mid { font-size: 1.45rem; }
+  .small2 { font-size: 1rem; }
+  th, td { padding: 7px 8px; font-size: .85rem; }
+  .chart { height: 260px; }
+  .weeknav { gap: 8px; }
+  .weeknav strong { flex: 1 0 100%; text-align: center; order: -1; }
+  .weeknav .btn { padding: 8px 14px; }
+}
+
+@media (max-width: 480px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .actions .btn { flex: 1 1 100%; padding: 14px 18px; }
+  .login { margin-top: 6vh; }
+}
+
+/* comfortable tap targets and no iOS zoom on inputs */
+.btn, .link, .eye { min-height: 44px; }
+.link { min-height: 36px; }
+input { font-size: 16px; }
